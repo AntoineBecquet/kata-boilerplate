@@ -3,8 +3,14 @@ describe Mod do
     expect(Mod).to be_a Module
   end
 
-  #should fail
   it "loads fixtures" do
-    expect(fixture("use_case_1")).to match(/123456789\n\z/)
+    expect(fixture("input1")).to match(<<~FILE)
+      Generation 1:
+      4 8
+      ........
+      ....*...
+      ...**...
+      ........
+    FILE
   end
 end
